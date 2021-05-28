@@ -38,4 +38,7 @@ public class Contato {
         if (this.email.contains(".") | this.email.contains(".")){ return 2; }
        return 0;
     }//=-=-=-=-=-=-=-=-=-=
+    public void print(){
+        System.out.println(this.getNome()+"\t"+this.getTelefone()+"\t"+this.getEmail());
+    }
 }
