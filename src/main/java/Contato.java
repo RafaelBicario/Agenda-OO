@@ -31,4 +31,11 @@ public class Contato {
     public void setEmail(String email) {
         this.email=email;
     }//=-=-=-=-=-=-=-=-=-=
+
+    //Validação
+    public int validacao(){
+        if (this.nome.isBlank() | this.telefone.isBlank() | this.email.isBlank()){ return 1; }
+        if (this.email.contains(".") | this.email.contains(".")){ return 2; }
+       return 0;
+    }//=-=-=-=-=-=-=-=-=-=
 }

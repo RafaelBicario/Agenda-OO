@@ -6,7 +6,14 @@ public class Agenda {
 
     //inserção de um novo contato na agenda.
     public void inserir(String nome, String telefone, String email){
-        this.contatos.add(new Contato(nome, telefone, email));
+        Contato c = new Contato(nome, telefone, email);
+        int code = c.validacao();
+        if (code==0){
+            this.contatos.add(c);
+        }
+        if(code==1){ System.out.println("Há Campos sem dados!"); }
+
+        else if (code==2){ System.out.println(" E-Mail informado é inválido! "); }
     }//=-=-=-=-=-=-=-=-=-=
 
 
@@ -31,6 +38,8 @@ public class Agenda {
     public void print(){
         for(Contato c : this.contatos){
             System.out.println(c.getNome());
+            System.out.println(c.getTelefone());
+            System.out.println(c.getEmail());
         }
     }//=-=-=-=-=-=-=-=-=-=
 }
